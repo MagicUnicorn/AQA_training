@@ -1,5 +1,3 @@
-import com.sun.xml.internal.ws.api.server.LazyMOMProvider;
-
 import java.util.*;
 
 public class CollectionOfRent {
