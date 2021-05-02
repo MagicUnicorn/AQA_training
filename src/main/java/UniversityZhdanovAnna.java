@@ -47,15 +47,15 @@ public class UniversityZhdanovAnna {
             case 1:
                 choiceName = getRandomInt(0, maleNames.length-1);
                 choiceSurname = getRandomInt(0, maleSurnames.length-1);
-                result = new BoyStudent(maleSurnames[choiceSurname], maleNames[choiceName], choiceAge);
+                return new BoyStudent(maleSurnames[choiceSurname], maleNames[choiceName], choiceAge);
             case 2:
                 choiceName = getRandomInt(0, femaleNames.length-1);
                 choiceSurname = getRandomInt(0, femaleSurnames.length-1);
-                result = new GirlStudent(femaleSurnames[choiceSurname], femaleNames[choiceName], choiceAge);
+                return new GirlStudent(femaleSurnames[choiceSurname], femaleNames[choiceName], choiceAge);
             default:
                 break;
         }
-        return result;
+        return null;
     }
 
     public static Lecture getLecture() {
