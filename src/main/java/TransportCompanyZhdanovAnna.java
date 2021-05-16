@@ -118,7 +118,8 @@ public class TransportCompanyZhdanovAnna {
             if (limitLuggageSpaces - luggageSpaces.size() >= count) {
                 for (int i = 0; i < count; i++) {
                     if (!checkLuggageLimit(height, depth, width, weight)) {
-                        continue;
+                        System.out.println("You can't buy luggage spaces. This size isn't allowed");
+                        break;
                     }
                     TransportCompanyZhdanovAnna.TransportTemplate.Luggage newLuggage = new Luggage(costLuggage, height, depth, width, weight);
                     luggageSpaces.add(newLuggage);
@@ -151,11 +152,9 @@ public class TransportCompanyZhdanovAnna {
         }
 
         public double getBuyoutSum() {
-            int commonWight = 0;
             double sum = 0.0;
             for (int i = 0; i < luggageSpaces.size(); i++) {
-                commonWight += luggageSpaces.get(i).weight;
-                sum += commonWight * costLuggage;
+                sum += luggageSpaces.get(i).weight * costLuggage;
             }
             sum += places.size() * costPlace + vipPlaces.size() * costVipPlace;
             return sum;
@@ -176,9 +175,6 @@ public class TransportCompanyZhdanovAnna {
                 this.width = width;
             }
 
-            public double getWeight() {
-                return this.weight;
-            }
         }
 
         private static class Place {
