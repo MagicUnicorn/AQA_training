@@ -41,7 +41,7 @@ public class TestEmail {
         $(By.xpath(closeModal)).click();
         $(By.xpath(pressSentEmail)).click();
         List<SelenideElement> emailsTheme  = $$(By.className("ll-sj__normal"));
-        Boolean isTrue = Boolean.FALSE;
+        Boolean isFind = Boolean.FALSE;
         for (int i = 0; i < emailsTheme.size(); i++) {
 
             SelenideElement themeElem = emailsTheme.get(i);
@@ -50,11 +50,11 @@ public class TestEmail {
             theme = theme.replaceAll("Self:","");
 
             if (theme.equals(emailTheme)) {
-                isTrue = Boolean.TRUE;
+                isFind = Boolean.TRUE;
                 break;
             }
         }
-        if (!isTrue) {
+        if (!isFind) {
             Assert.fail("No email with theme:"+emailTheme);
         }
 
